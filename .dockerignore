@@ -1,0 +1,64 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Database
+database/gym_management.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Documentation
+*.md
+README*.md
+TESTING_COMPLETE.md
+
+# Test files
+test_app.py
+tests/
+
+# Uploads
+uploads/
+temp/
+
+# Claude
+.claude/
+
+# Batch files
+*.bat
+
+# Python version file (Docker handles this)
+.python-version
