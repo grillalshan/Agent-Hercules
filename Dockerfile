@@ -20,11 +20,12 @@ COPY . .
 # Create database directory
 RUN mkdir -p /app/database
 
-# Expose Streamlit port
+# Expose Streamlit port (informational)
 EXPOSE 8501
 
-# Health check
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
+# Health check uses the PORT env var (fallback to 8501)
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+  CMD curl --fail "http://localhost:${PORT:-8501}/_stcore/health" || exit 1
 
-# Run Streamlit
-CMD ["streamlit", "run", "Home.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
+# Run Streamlit binding to the PORT env var Render provides (fallback to 8501 locally)
+CMD ["bash", "-lc", "exec streamlit run Home.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true"]
