@@ -2,6 +2,6 @@ streamlit==1.30.0
 pandas==2.2.0
 openpyxl==3.1.2
 bcrypt==4.1.2
-langchain-core==0.1.52
+langchain-core==0.2.38
 langgraph==0.0.69
 python-dateutil==2.8.2
